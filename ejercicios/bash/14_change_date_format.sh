@@ -12,7 +12,13 @@ sed 's/\//-/g' format_date.tmp > replace_dash.tmp
 # 4. Marcar el campo year
 sed 's/\([0-9][0-9][0-9][0-9]\)/year\1/' replace_dash.tmp > mark_year.tmp
 
-# 5. Marcar el campo mes
-sed 's/\([-][0-9][0-9][-]\)/-month\1/' mark_year.tmp > mark_month.tmp
+# 5. Marcar el campo dia
+sed 's/\(^[0-9][0-9][-]\)/day\1/' mark_year.tmp > mark_day.tmp
 
-cat mark_month.tmp
+# 6. Marcar el campo mes
+sed 's/-\([0-9][0-9]\)/-month\1/' mark_day.tmp > mark_month.tmp
+
+# 7. Intercambiar 
+sed 's/day\([0-9][0-9]\) year\([0-9][0-9][0-9][0-9]\)/\1 \2 \1-\2/' mark_month.tmp > test.tmp
+
+cat test.tmp
