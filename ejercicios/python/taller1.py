@@ -7,8 +7,8 @@ def csv_to_html(source_filename, target_filename):
 def html_to_csv(source_filename, target_filename):
 	dataframe = pd.read_html(source_filename)
 	dataframe[0].to_csv(target_filename, sep = ';', index = False)
-	# print(dataframe[0].__class__)
 
+	
 source1_filename = 'taller1_1_customers.csv'
 target1_filename = 'taller1_1_customers.html'
 source2_filename = 'taller1_3_customers.html'
