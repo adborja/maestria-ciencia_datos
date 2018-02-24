@@ -11,7 +11,9 @@ Este es un texto
   * Este es un subitem
   * Este es otro subitem
 
-## Seccion 2
+## Seccion 2
+
+Este es un codigo en la misma linea `print("Hola a todos")`
 
 Este otro texto, ejemplo de ***codigo***
 
@@ -21,6 +23,6 @@ Este otro texto, ejemplo de ***codigo***
 
 ## Seccion 3
 
-Haga click [aqui](www.google.com) para ir a google
+Haga click [aqui](http://www.google.com) para ir a google
 
 Este es otro texto mas
