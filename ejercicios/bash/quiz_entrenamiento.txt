@@ -1,0 +1,53 @@
+head -n 4 BarclayCard\ US.txt 
+
+csvsql --query 'select count("city") from person where "city" = "Miami (Florida)"' person
+(grep -c 'Miami (Florida)' person)
+= 146
+wc -l person
+=15001
+R: 15000 - 146 
+
+tail +2 person |sort -t"," -k1 > out.tmp
+head -n 58 out.tmp
+
+tail +2 U.S.\ Bank.txt |awk 'NR == 3854 {print}'
+
+tail +2 The\ Bank\ of\ New\ York\ Mellon.csv |wc -l
+= 1010
+
+grep -n --color '3608-2181-5696-1435' *
+cp Credit\ Suisse.csv creditsuisse
+csvsql --query 'select "ssn" from creditsuisse where "ccn" = "3608-2181-5696-1435"' creditsuisse
+- R: 177-83-1491
+grep -n --color '177-83-1491' person
+csvsql --query 'select "fullname" from person where "ssn" = "177-83-1491"' person 
+- R: Irvin Hansard
+
+
+Jul Aug Sep
+awk '/Jul/ || /Aug/ || /Sep/ {print $0}' allcards.txt |wc -l
+R: 12698
+
+cut -d'-' -f3 allccncards2.tmp |grep '4160'|wc -l
+
+cut -d',' -f5 person |grep '[B][a-zA-Z]* [O][a-zA-Z]*' |wc -l
+R: 10
+
+csvsql --query 'select count("pin") from allcards where "pin" >= "590" and pin <= "600"' allcards.txt
+R:532
+
+
+
+
+
+csvsql --query 'select count("city") from person where "city" = "North Las Vegas (Nevada)"' person
+R:142
+
+cut -d',' -f6 person |grep '[A-Z][a-z][a-z][+][0-9]*[-][0]1[-]' |wc -l
+cut -d',' -f6 person |grep '[A-Z][a-z][a-z][+][0-9]*[-][0]2[-]' |wc -l
+cut -d',' -f6 person |grep '[A-Z][a-z][a-z][+][0-9]*[-][0]3[-]' |wc -l
+
+
+
+
+
