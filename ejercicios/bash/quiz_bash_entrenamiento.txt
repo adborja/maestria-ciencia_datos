@@ -47,6 +47,10 @@ cut -d',' -f6 person |grep '[A-Z][a-z][a-z][+][0-9]*[-][0]1[-]' |wc -l
 cut -d',' -f6 person |grep '[A-Z][a-z][a-z][+][0-9]*[-][0]2[-]' |wc -l
 cut -d',' -f6 person |grep '[A-Z][a-z][a-z][+][0-9]*[-][0]3[-]' |wc -l
 
+cut -d',' -f6 person |grep '[A-Z][a-z][a-z][+][0-9]*[-][0]7[-]' |wc -l
+cut -d',' -f6 person |grep '[A-Z][a-z][a-z][+][0-9]*[-][0]8[-]' |wc -l
+cut -d',' -f6 person |grep '[A-Z][a-z][a-z][+][0-9]*[-][0]9[-]' |wc -l
+
 
 
 
