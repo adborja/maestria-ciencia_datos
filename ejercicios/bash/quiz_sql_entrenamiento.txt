@@ -22,7 +22,7 @@ SELECT f.key1,
 -- Cual es el valor del campo 'ccn' de la tabla 'banco' para el registro 101?
 SELECT b.ccn, 
        @rownum := @rownum + 1 AS rown
-  FROM banco b, a
+  FROM banco b, 
        (SELECT @rownum := 0) r;
 
 -- Cuantos registros hay en la tabla 'persona' para city = 'xyz'?
@@ -53,3 +53,5 @@ SELECT p.ssn, p.city,
 
 -- Cuantas veces aparece el número wxyz en el tercer grupo de digitos de las tarjetas decredito en la tabla 'franquicia'?
 select count(ccn) from franquicia where ccn like '%-5038-%';
+
+
